@@ -1,12 +1,4 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: catalogue
-  namespace: roboshop
-data:
-  MONGO: "true"
-  MONGO_URL: "mongodb://mongodb:27017/catalogue"
----
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -35,7 +27,7 @@ spec:
     spec:
       containers:
       - name: catalogue
-        image: catalogue:v1
+        image: amaravathik/catalogue:v1
         imagePullPolicy: Always
         envFrom:
         - configMapRef:

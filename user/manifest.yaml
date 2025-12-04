@@ -3,10 +3,10 @@ kind: ConfigMap
 metadata:
   name: user
   namespace: roboshop
-data: 
+data:
   MONGO: "true"
-  MONGO_URL: "mongodb://mongodb:27017/user"
-  # these are replica set labels
+  REDIS_URL: "redis://redis:6379"
+  MONGO_URL: "mongodb://mongodb:27017/users"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -49,13 +49,13 @@ spec:
             path: /health
             port: liveness-port
           failureThreshold: 1
-          periodSeconds: 10
+          periodSeconds: 15
         livenessProbe:
           httpGet:
             path: /health
             port: liveness-port
           failureThreshold: 1
-          periodSeconds: 10
+          periodSeconds: 15
 ---
 apiVersion: v1
 kind: Service

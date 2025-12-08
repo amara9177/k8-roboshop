@@ -32,7 +32,7 @@ kind: Pod
 metadata:
   name: nginx 
   labels: 
-    purpose: ebs-static
+    purpose: efs-static
 spec:
   containers:
   - name: nginx
@@ -44,6 +44,6 @@ spec:
   volumes:
   - name: nginx-html
     persistentVolumeClaim:
-      claimName: ebs-static
+      claimName: efs-static
 
   

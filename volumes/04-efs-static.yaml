@@ -34,7 +34,7 @@ metadata:
   labels: 
     purpose: efs-static
 
-spec:
+spec: 
   containers:
   - name: nginx
     image: nginx
@@ -44,8 +44,8 @@ spec:
   nodeSelector: 
     topology.kubernetes.io/zone:  us-east-1b
   volumes:
-  - name: nginx-html
+  - name: nginx-html 
     persistentVolumeClaim:
-      claimName: efs-static
+      claimName: efs-static  
 
   

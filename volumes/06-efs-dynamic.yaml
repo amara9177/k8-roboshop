@@ -1,14 +1,15 @@
-apiVersion: v1 
-kind: persistentVolumeClaim 
-metadata: 
-  name: roboshop-efs 
-spec: 
-  accessModes:  
-    - ReadWriteMany 
-  storageClassName: roboshop-efs 
-  resources: 
-    requests: 
-      storage:  5Gi 
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: efs-dynamic
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: roboshop-efs
+  resources:
+    requests:
+      storage: 5Gi
+
 --- 
 
 apiVersion: v1
